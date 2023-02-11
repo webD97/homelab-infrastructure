@@ -4,3 +4,6 @@ helm:
   repo: https://charts.bitnami.com/bitnami
   chart: metallb
   releaseName: metallb
+  values:
+    speaker:
+      secretValue: sxVAdWb3PL9wJeM1RXxBTdZxEQRyG1MR9UhdtOvs1cqnOvGRgYqt21wWtj8OPLaCtaNfGm69W0ihK9N0D03ifIaFec1Ct1Chi6vXsiziazOu6wYQ8Xi3B7tvQLIQLvLIhcZqCUGi4yAT4fIa8DTeVIP4Z2k1T5smEX5a4fXTLj0RNefiBf94YguwTVgGYgcObKVxSQ9YhVx0w0bIoPsCtrxhldj1z3gcPiFsX5VmALwfgBQZPQtALNM0hZ4Nw3nY
