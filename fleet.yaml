@@ -1,0 +1,17 @@
+defaultNamespace: metallb-system
+
+helm:
+  repo: https://charts.bitnami.com/bitnami
+  chart: metallb
+  releaseName: metallb
+  version: 0.13.7
+  values:
+    extraDeploy:
+      - |
+        apiVersion: metallb.io/v1beta1
+        kind: IPAddressPool
+        metadata:
+          name: main
+        spec:
+          addresses:
+            - 192.168.178.226-192.168.178.254
