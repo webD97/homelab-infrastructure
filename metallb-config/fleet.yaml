@@ -1,3 +1,4 @@
 defaultNamespace: metallb-system
+
 dependsOn:
-  - metallb-metallb
+  - name: metallb-metallb
