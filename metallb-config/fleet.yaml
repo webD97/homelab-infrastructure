@@ -1,4 +1,4 @@
 defaultNamespace: metallb-system
 
 dependsOn:
-  - name: infastructure-metallb-config
+  - name: infastructure-metallb-deployment
