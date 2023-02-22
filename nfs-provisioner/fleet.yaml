@@ -1,0 +1,10 @@
+defaultNamespace: metallb-system
+
+helm:
+  repo: https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner
+  chart: nfs-subdir-external-provisioner
+  releaseName: nfs-subdir-external-provisioner
+  values:
+    nfs:
+      server: truenas.fritz.box
+      path: /mnt/hdd-pool/kube
