@@ -8,3 +8,5 @@ helm:
     nfs:
       server: truenas.fritz.box
       path: /mnt/hdd-pool/kube
+    storageClass:
+      defaultClass: true
