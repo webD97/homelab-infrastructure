@@ -1,4 +1,4 @@
-defaultNamespace: metallb-system
+defaultNamespace: nfs-provisioner-system
 
 helm:
   repo: https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner
