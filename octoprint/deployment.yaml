@@ -17,6 +17,8 @@ spec:
       containers:
       - name: octoprint
         image: octoprint/octoprint:1.8.7
+        securityContext:
+          privileged: true
         ports:
         - containerPort: 80
           name: http
