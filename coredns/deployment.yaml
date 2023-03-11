@@ -57,6 +57,7 @@ spec:
         volumeMounts:
         - mountPath: /etc/coredns
           name: config-volume
+      serviceAccountName: coredns
       volumes:
       - configMap:
           defaultMode: 420
