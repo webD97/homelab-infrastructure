@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   name: octoprint
 spec:
-  replicas: 2
   selector:
     matchLabels:
       app.kubernetes.io/instance: octoprint
