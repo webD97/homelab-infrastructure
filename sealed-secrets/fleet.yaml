@@ -1,4 +1,4 @@
-defaultNamespace: sealed-secrets
+defaultNamespace: kube-system
 
 helm:
   repo: https://bitnami-labs.github.io/sealed-secrets
