@@ -1,0 +1,6 @@
+defaultNamespace: sealed-secrets
+
+helm:
+  repo: https://bitnami-labs.github.io/sealed-secrets
+  chart: sealed-secrets
+  releaseName: sealed-secrets
