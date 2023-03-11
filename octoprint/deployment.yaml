@@ -26,7 +26,7 @@ spec:
           name: data
         env:
           - name: "ENABLE_MJPG_STREAMER"
-            value: "true"
+            value: "false"
           - name: "TZ"
             value: "Europe/Berlin"
           - name: "OCTOPRINT_PORT"
