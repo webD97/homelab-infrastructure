@@ -24,6 +24,13 @@ spec:
         volumeMounts:
         - mountPath: /octoprint
           name: data
+        env:
+          - name: "ENABLE_MJPG_STREAMER"
+            value: "true"
+          - name: "TZ"
+            value: "Europe/Berlin"
+          - name: "OCTOPRINT_PORT"
+            value: "80"
       volumes:
       - name: data
         persistentVolumeClaim:
