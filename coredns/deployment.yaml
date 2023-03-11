@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}
+  name: coredns
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app.kubernetes.io/instance: {{ .Release.Name }}
-      app.kubernetes.io/name: {{ .Release.Name }}
+      app.kubernetes.io/instance: coredns
+      app.kubernetes.io/name: coredns
   template:
     metadata:
       labels:
-        app.kubernetes.io/instance: {{ .Release.Name }}
-        app.kubernetes.io/name: {{ .Release.Name }}
+        app.kubernetes.io/instance: coredns
+        app.kubernetes.io/name: coredns
     spec:
       containers:
       - args:
@@ -63,5 +63,5 @@ spec:
           items:
           - key: Corefile
             path: Corefile
-          name: {{ .Release.Name }}
+          name: coredns
         name: config-volume
