@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  ports:
+  - name: udp-53
+    port: 53
+    protocol: UDP
+    targetPort: 53
+  - name: tcp-53
+    port: 53
+    protocol: TCP
+    targetPort: 53
+  selector:
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/name: {{ .Release.Name }}
+  type: LoadBalancer
