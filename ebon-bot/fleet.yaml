@@ -1,1 +1,4 @@
 defaultNamespace: rewe-ebon-bot
+
+dependsOn:
+  - name: infastructure-sealed-secrets
