@@ -24,6 +24,8 @@ spec:
         volumeMounts:
         - mountPath: /octoprint
           name: data
+        - mountPath: /dev/ttyUSB0
+          name: printer
         env:
           - name: "ENABLE_MJPG_STREAMER"
             value: "false"
@@ -35,3 +37,7 @@ spec:
       - name: data
         persistentVolumeClaim:
           claimName: octoprint
+      - name: printer
+        hostPath:
+          path: /dev/ttyUSB0
+          type: File
