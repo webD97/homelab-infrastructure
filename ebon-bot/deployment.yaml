@@ -1,0 +1,82 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ebon-bot
+spec:
+  selector:
+    matchLabels:
+      app: ebon-bot
+  template:
+    metadata:
+      labels:
+        app: ebon-bot
+    spec:
+      containers:
+      - name: ebb
+        image: ghcr.io/webd97/ebon-bot:sha-ec27f18
+        env:
+        - name: EBB_IMAP_HOST
+          valueFrom:
+            secretKeyRef:
+              name: ebon-bot
+              key: imap-host
+        - name: EBB_IMAP_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: ebon-bot
+              key: imap-username
+        - name: EBB_IMAP_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: ebon-bot
+              key: imap-password
+        - name: EBB_IMAP_PORT
+          valueFrom:
+            secretKeyRef:
+              name: ebon-bot
+              key: imap-port
+        - name: EBB_IMAP_BOX
+          valueFrom:
+            secretKeyRef:
+              name: ebon-bot
+              key: imap-inbox
+        - name: EBB_NEXTCLOUD_SERVER_URL
+          valueFrom:
+            secretKeyRef:
+              name: ebon-bot
+              key: nextcloud-url
+        - name: EBB_NEXTCLOUD_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: ebon-bot
+              key: nextcloud-username
+        - name: EBB_NEXTCLOUD_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: ebon-bot
+              key: nextcloud-password
+        - name: EBB_NEXTCLOUD_DIRECTORY
+          valueFrom:
+            secretKeyRef:
+              name: ebon-bot
+              key: nextcloud-direcoty
+        - name: EBB_TELEGRAM_BOT_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: ebon-bot
+              key: telegram-token
+        - name: EBB_TELEGRAM_API_ID
+          valueFrom:
+            secretKeyRef:
+              name: ebon-bot
+              key: telegram-api-id
+        - name: EBB_TELEGRAM_API_HASH
+          valueFrom:
+            secretKeyRef:
+              name: ebon-bot
+              key: telegram-api-hash
+        - name: EBB_TELEGRAM_PEER
+          valueFrom:
+            secretKeyRef:
+              name: ebon-bot
+              key: telegram-username
