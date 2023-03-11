@@ -40,4 +40,4 @@ spec:
       - name: printer
         hostPath:
           path: /dev/ttyUSB0
-          type: File
+          type: CharDevice
