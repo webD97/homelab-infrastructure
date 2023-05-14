@@ -17,15 +17,19 @@ helm:
       enabled: true
       storagePath: &storagePath /photoprism/storage
       originalsPath: &originalsPath /photoprism/originals
+      volumeClaimTemplates:
+        - metadata:
+            name: storage
+          spec:
+            accessModes: ["ReadWriteOnce"]
+            resources:
+              requests:
+                storage: 100Gi
       volumes:
         - name: originals
           nfs:
             server: truenas.fritz.box
-            path: /mnt/hdd-pool/christian/photoprism-test/originals
-        - name: storage
-          nfs:
-            server: truenas.fritz.box
-            path: /mnt/hdd-pool/christian/photoprism-test/storage
+            path: /mnt/hdd-pool/christian/Bilder/Archiv
       volumeMounts:
         - name: originals
           mountPath: *originalsPath
