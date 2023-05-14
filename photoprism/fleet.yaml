@@ -5,7 +5,17 @@ helm:
   chart: photoprism
   releaseName: photoprism
   values:
-    persistence:
-      enabled: true
     service:
       type: LoadBalancer
+    persistence:
+      enabled: true
+      volumes:
+      - name: originals
+        nfs:
+          server: truenas.fritz.box
+          path: /mnt/hdd-pool/christian/photoprism-test/originals
+      - name: storage
+        nfs:
+          server: truenas.fritz.box
+          path: /mnt/hdd-pool/christian/photoprism-test/storage
+
