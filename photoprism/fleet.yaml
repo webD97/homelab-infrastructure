@@ -5,6 +5,8 @@ helm:
   chart: photoprism
   releaseName: photoprism
   values:
+    image:
+      tag: "230514"
     service:
       type: LoadBalancer
     persistence:
