@@ -9,6 +9,10 @@ helm:
       tag: "230514"
     service:
       type: LoadBalancer
+    securityContext:
+      fsGroup: 1000
+      runAsUser: 1000
+      runAsGroup: 1000
     persistence:
       enabled: true
       storagePath: &storagePath /photoprism/storage
@@ -27,7 +31,3 @@ helm:
           mountPath: *originalsPath
         - name: storage
           mountPath: *storagePath
-      securityContext:
-        fsGroup: 1000
-        runAsUser: 1000
-        runAsGroup: 1000
