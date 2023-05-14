@@ -13,6 +13,12 @@ helm:
       fsGroup: 1000
       runAsUser: 1000
       runAsGroup: 1000
+    config:
+      PHOTOPRISM_DEBUG: false
+      PHOTOPRISM_PUBLIC: false
+      PHOTOPRISM_READONLY: true
+      PHOTOPRISM_DETECT_NSFW: true
+      PHOTOPRISM_DISABLE_WEBDAV: true
     persistence:
       enabled: true
       storagePath: &storagePath /photoprism/storage
@@ -35,9 +41,3 @@ helm:
           mountPath: *originalsPath
         - name: storage
           mountPath: *storagePath
-    config:
-      PHOTOPRISM_DEBUG: false
-      PHOTOPRISM_PUBLIC: false
-      PHOTOPRISM_READONLY: true
-      PHOTOPRISM_DETECT_NSFW: true
-      PHOTOPRISM_DISABLE_WEBDAV: true
