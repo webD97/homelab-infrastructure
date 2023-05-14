@@ -11,13 +11,23 @@ helm:
       type: LoadBalancer
     persistence:
       enabled: true
+      storagePath: &storagePath /photoprism/storage
+      originalsPath: &originalsPath /photoprism/originals
       volumes:
-      - name: originals
-        nfs:
-          server: truenas.fritz.box
-          path: /mnt/hdd-pool/christian/photoprism-test/originals
-      - name: storage
-        nfs:
-          server: truenas.fritz.box
-          path: /mnt/hdd-pool/christian/photoprism-test/storage
-
+        - name: originals
+          nfs:
+            server: truenas.fritz.box
+            path: /mnt/hdd-pool/christian/photoprism-test/originals
+        - name: storage
+          nfs:
+            server: truenas.fritz.box
+            path: /mnt/hdd-pool/christian/photoprism-test/storage
+      volumeMounts:
+        - name: originals
+          mountPath: *originalsPath
+        - name: storage
+          mountPath: *storagePath
+      securityContext:
+        fsGroup: 1000
+        runAsUser: 1000
+        runAsGroup: 1000
