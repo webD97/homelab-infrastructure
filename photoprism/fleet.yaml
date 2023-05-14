@@ -35,3 +35,9 @@ helm:
           mountPath: *originalsPath
         - name: storage
           mountPath: *storagePath
+    config:
+      PHOTOPRISM_DEBUG: false
+      PHOTOPRISM_PUBLIC: false
+      PHOTOPRISM_READONLY: true
+      PHOTOPRISM_DETECT_NSFW: true
+      PHOTOPRISM_DISABLE_WEBDAV: true
