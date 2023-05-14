@@ -1,0 +1,11 @@
+defaultNamespace: media
+
+helm:
+  repo: https://p80n.github.io/photoprism-helm/
+  chart: photoprism
+  releaseName: photoprism
+  values:
+    persistence:
+      enabled: true
+    service:
+      type: LoadBalancer
