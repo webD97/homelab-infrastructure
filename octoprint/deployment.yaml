@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: octoprint
-        image: octoprint/octoprint:1.8.7
+        image: octoprint/octoprint:1.9.0
         securityContext:
           privileged: true
         ports:
