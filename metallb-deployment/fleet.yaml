@@ -3,6 +3,7 @@ defaultNamespace: metallb-system
 helm:
   repo: https://charts.bitnami.com/bitnami
   chart: metallb
+  version: 0.13.10
   releaseName: metallb
   values:
     speaker:
