@@ -28,6 +28,7 @@ ingress:
 persistence:
   enabled: yes
   storage: 2G
+  volumeName: pvc-f2e7bbc9-49e2-43a4-8ea0-4c52caa164de
 
 resources: {}
 
