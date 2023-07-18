@@ -11,7 +11,7 @@ spec:
   resources:
     requests:
       storage: "{{ .Values.persistence.storage | default "1G" }}"
-  {{- if .Values.persistence.volumeName -}}
+  {{ if .Values.persistence.volumeName -}}
   volumeName: "{{ .Values.persistence.volumeName }}"
   {{- end }}
 {{- end }}
