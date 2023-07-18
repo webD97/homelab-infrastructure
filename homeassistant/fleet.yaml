@@ -1,1 +1,4 @@
 defaultNamespace: smart-home
+
+helm:
+  releaseName: home-assistant
