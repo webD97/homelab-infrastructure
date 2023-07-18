@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "homeassistant.fullname" . }}
+  labels:
+    {{- include "homeassistant.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+    - name: ha-local
+      protocol: TCP
+      port: 34711
+      targetPort: 34711
+  selector:
+    {{- include "homeassistant.selectorLabels" . | nindent 4 }}

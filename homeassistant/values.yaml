@@ -1,0 +1,38 @@
+image:
+  repository: docker.io/homeassistant/home-assistant
+  pullPolicy: IfNotPresent
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  type: LoadBalancer
+  port: 80
+
+ingress:
+  enabled: false
+
+persistence:
+  enabled: yes
+  storage: 2G
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
