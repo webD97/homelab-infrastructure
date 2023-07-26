@@ -6,7 +6,7 @@ helm:
   releaseName: photoprism
   values:
     image:
-      tag: "230514"
+      tag: "230719"
     service:
       type: LoadBalancer
     securityContext:
