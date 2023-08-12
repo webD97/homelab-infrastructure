@@ -26,7 +26,7 @@ spec:
         volumeMounts:
         - mountPath: /octoprint
           name: data
-        - mountPath: /dev/ttyUSB0
+        - mountPath: /dev/ttyAnycubic
           name: printer
         env:
           - name: "ENABLE_MJPG_STREAMER"
@@ -41,5 +41,5 @@ spec:
           claimName: octoprint
       - name: printer
         hostPath:
-          path: /dev/ttyUSB0
+          path: /dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0
           type: CharDevice
