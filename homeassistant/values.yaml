@@ -16,8 +16,7 @@ podAnnotations: {}
 
 podSecurityContext: {}
 
-securityContext:
-  privileged: true
+securityContext: {}
 
 service:
   type: LoadBalancer
