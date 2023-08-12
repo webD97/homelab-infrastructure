@@ -30,10 +30,6 @@ spec:
         - name: config
           persistentVolumeClaim:
             claimName: {{ include "homeassistant.fullname" . }}
-        - name: skyconnect
-          hostPath:
-            type: CharDevice
-            path: {{ .Values.skyconnect.hostPath }}
       {{- end }}
       containers:
         - name: {{ .Chart.Name }}
@@ -45,8 +41,6 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /config
-            - name: skyconnect
-              mountPath: /dev/ttySkyconnect
           {{- end }}
           ports:
             - name: http
