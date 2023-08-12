@@ -8,6 +8,10 @@ spec:
       app.kubernetes.io/instance: octoprint
       app.kubernetes.io/name: octoprint
   replicas: 1
+  securityContext:
+    privileged: false
+    runAsUser: 1000
+    runAsGroup: 18 # dialout
   template:
     metadata:
       labels:
@@ -17,11 +21,6 @@ spec:
       containers:
       - name: octoprint
         image: octoprint/octoprint:1.9.2
-        securityContext:
-          privileged: false
-          runAsUser: 1000
-          runAsGroup: 1000
-          fsGroup: 18 # dialout
         ports:
         - containerPort: 80
           name: http
