@@ -18,7 +18,10 @@ spec:
       - name: octoprint
         image: octoprint/octoprint:1.9.2
         securityContext:
-          privileged: true
+          privileged: false
+          runAsUser: 1000
+          runAsGroup: 1000
+          fsGroup: 18 # dialout
         ports:
         - containerPort: 80
           name: http
