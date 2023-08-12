@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: octoprint-extra-init
+data:
+  00-ln-serial: |-
+    #!/usr/bin/with-contenv bash
+    id=0
+    
+    for port in /dev/serial/by-id/*; do
+      ln -vs "$port" /dev/serial/by-id/ttyUSB$id
+      ((id++))
+    done
+
+    exit 0
