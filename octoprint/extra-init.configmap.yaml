@@ -8,7 +8,7 @@ data:
     id=0
     
     for port in /dev/serial/by-id/*; do
-      ln -vs "$port" /dev/serial/by-id/ttyUSB$id
+      ln -vs "$port" /dev/ttyUSB$id
       ((id++))
     done
 
