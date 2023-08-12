@@ -30,6 +30,10 @@ spec:
         - name: config
           persistentVolumeClaim:
             claimName: {{ include "homeassistant.fullname" . }}
+        - name: extra-init
+          configMap:
+            defaultMode: 0777
+            name: {{ include "homeassistant.fullname" . }}-extra-init
       {{- end }}
       containers:
         - name: {{ .Chart.Name }}
@@ -41,6 +45,9 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /config
+            - name: extra-init
+              subPath: 00-ln-serial
+              mountPath: /etc/cont-init.d/00-ln-serial
           {{- end }}
           ports:
             - name: http
