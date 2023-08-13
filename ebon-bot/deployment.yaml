@@ -12,9 +12,9 @@ spec:
         app: ebon-bot
     spec:
       volumes:
-        name: data
-        persistentVolumeClaim:
-          claimName: ebons
+        - name: data
+          persistentVolumeClaim:
+            claimName: ebons
       containers:
       - name: ebb
         image: ghcr.io/webd97/ebon-bot:sha-6e28365
