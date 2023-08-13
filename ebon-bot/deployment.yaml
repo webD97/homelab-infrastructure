@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: ebb
-        image: ghcr.io/webd97/ebon-bot:sha-ec27f18
+        image: ghcr.io/webd97/ebon-bot:sha-a76c2f8
         env:
         - name: EBB_IMAP_HOST
           valueFrom:
