@@ -11,9 +11,16 @@ spec:
       labels:
         app: ebon-bot
     spec:
+      volumes:
+        name: data
+        persistentVolumeClaim:
+          claimName: ebons
       containers:
       - name: ebb
-        image: ghcr.io/webd97/ebon-bot:sha-a76c2f8
+        image: ghcr.io/webd97/ebon-bot:sha-6e28365
+        volumeMounts:
+          - name: data
+            mountPath: /mnt/ebons
         env:
         - name: EBB_IMAP_HOST
           valueFrom:
@@ -40,26 +47,8 @@ spec:
             secretKeyRef:
               name: ebon-bot
               key: imap-inbox
-        - name: EBB_NEXTCLOUD_SERVER_URL
-          valueFrom:
-            secretKeyRef:
-              name: ebon-bot
-              key: nextcloud-url
-        - name: EBB_NEXTCLOUD_USERNAME
-          valueFrom:
-            secretKeyRef:
-              name: ebon-bot
-              key: nextcloud-username
-        - name: EBB_NEXTCLOUD_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: ebon-bot
-              key: nextcloud-password
-        - name: EBB_NEXTCLOUD_DIRECTORY
-          valueFrom:
-            secretKeyRef:
-              name: ebon-bot
-              key: nextcloud-direcoty
+        - name: EBB_SAVE_DIRECTORY
+          value: /mnt/ebons
         - name: EBB_TELEGRAM_BOT_TOKEN
           valueFrom:
             secretKeyRef:
