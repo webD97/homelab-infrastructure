@@ -18,6 +18,16 @@ podSecurityContext: {}
 
 securityContext: {}
 
+podExtraVolumes:
+  - name: media
+    nfs:
+      server: truenas.fritz.box
+      path: /mnt/hdd-pool/christian/Bilder/Archiv
+
+podExtraVolumeMounts:
+  - name: media-video
+    mountPath: /mnt/media-video
+
 service:
   type: LoadBalancer
   port: 80
