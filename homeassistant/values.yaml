@@ -19,7 +19,7 @@ podSecurityContext: {}
 securityContext: {}
 
 podExtraVolumes:
-  - name: media
+  - name: media-video
     nfs:
       server: truenas.fritz.box
       path: /mnt/hdd-pool/christian/Bilder/Archiv
