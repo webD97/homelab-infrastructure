@@ -22,7 +22,7 @@ podExtraVolumes:
   - name: media-video
     nfs:
       server: truenas.fritz.box
-      path: /mnt/hdd-pool/christian/Bilder/Archiv
+      path: /mnt/hdd-pool/christian/Videos
 
 podExtraVolumeMounts:
   - name: media-video
