@@ -1,0 +1,4 @@
+defaultNamespace: system-upgrade
+
+dependsOn:
+  - name: infastructure-system-upgrade-controller
