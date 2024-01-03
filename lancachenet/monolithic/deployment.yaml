@@ -32,7 +32,7 @@ spec:
               containerPort: 443
           env:
             - name: CACHE_ROOT
-              value: "/mnt/data"
+              value: "/data"
             - name: CACHE_DISK_SIZE
               value: "950g"
             - name: CACHE_INDEX_SIZE
@@ -43,4 +43,4 @@ spec:
               value: "Europe/Berlin"
           volumeMounts:
             - name: cache
-              mountPath: /mnt/data
+              mountPath: /data
