@@ -22,7 +22,7 @@ spec:
           resources:
             limits:
               memory: "2Gi"
-              cpu: "4000m"
+              cpu: "2000m"
           ports:
             - name: http
               containerPort: 80
