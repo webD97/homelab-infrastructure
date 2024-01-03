@@ -29,8 +29,6 @@ spec:
             - name: https
               containerPort: 443
           env:
-            - name: UPSTREAM_DNS
-              value: "192.168.178.250"
             - name: CACHE_ROOT
               value: "/mnt/data"
             - name: CACHE_DISK_SIZE

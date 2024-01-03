@@ -13,3 +13,5 @@ spec:
     - name: https
       port: 443
       targetPort: https
+  externalIPs:
+    - "192.168.178.227"

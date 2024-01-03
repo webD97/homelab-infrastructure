@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lancache-dns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lancache-dns
+  template:
+    metadata:
+      labels:
+        app: lancache-dns
+    spec:
+      containers:
+        - name: lancache
+          image: lancachenet/lancache-dns:latest
+          resources:
+            limits:
+              memory: "100Mi"
+              cpu: "50m"
+          ports:
+            - name: dnstcp
+              containerPort: 53
+              protocol: TCP
+            - name: dnsudp
+              containerPort: 53
+              protocol: UDP
+          env:
+            - name: LANCACHE_IP
+              value: "192.168.178.227"
+            - name: DNS_BIND_IP
+              value: "192.168.178.227"
+            - name: UPSTREAM_DNS
+              value: "192.168.178.250"
+            - name: TZ
+              value: "Europe/Berlin"
+          volumeMounts:
+            - name: cache
+              mountPath: /mnt/data
