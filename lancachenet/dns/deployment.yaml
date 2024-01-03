@@ -32,7 +32,7 @@ spec:
             - name: LANCACHE_IP
               value: "192.168.178.227"
             - name: DNS_BIND_IP
-              value: "192.168.178.227"
+              value: "192.168.178.230"
             - name: UPSTREAM_DNS
               value: "192.168.178.250"
             - name: TZ
