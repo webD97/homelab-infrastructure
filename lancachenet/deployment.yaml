@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lancache-monolithic
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lancache-monolithic
+  template:
+    metadata:
+      labels:
+        app: lancache-monolithic
+    spec:
+      volumes:
+        - name: cache
+          persistentVolumeClaim:
+            claimName: lancache
+      containers:
+        - name: lancache
+          image: lancachenet/monolithic:latest
+          resources:
+            limits:
+              memory: "2Gi"
+              cpu: "4000m"
+          ports:
+            - name: http
+              containerPort: 80
+            - name: https
+              containerPort: 443
+          env:
+            - name: UPSTREAM_DNS
+              value: "192.168.178.250"
+            - name: CACHE_ROOT
+              value: "/mnt/data"
+            - name: CACHE_DISK_SIZE
+              value: "950g"
+            - name: CACHE_INDEX_SIZE
+              value: "250m"
+            - name: CACHE_MAX_AGE
+              value: "3650d"
+            - name: TZ
+              value: "Europe/Berlin"
+          volumeMounts:
+            - name: cache
+              mountPath: /mnt/data
