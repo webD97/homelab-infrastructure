@@ -27,6 +27,8 @@ spec:
               containerPort: 53
               protocol: UDP
           env:
+            - name: USE_GENERIC_CACHE
+              value: "true"
             - name: LANCACHE_IP
               value: "192.168.178.227"
             - name: DNS_BIND_IP
