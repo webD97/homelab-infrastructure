@@ -28,7 +28,7 @@ paperless-ngx:
     enabled: true
     auth:
       database: paperless
-      existingSecret: paperless-pg
+      existingSecret: infrastructure-paperless-ngx-postgresql
     primary:
       persistence:
         enabled: true
