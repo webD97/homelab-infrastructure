@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: Secret
-metadata:
-  name: paperless-pg
-  namespace: paperless
-data:
-  postgresql-password: cWhOQ1RCdHFOZjl2bVpjYk9Ta3IwQ09CVXFSSkdJY2h5U0ZRT3FZSjFxMTZKamht

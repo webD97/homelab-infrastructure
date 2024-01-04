@@ -1,0 +1,15 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: paperless-pg
+  namespace: paperless
+spec:
+  encryptedData:
+    postgresql-password: AgCWiLQfKV5Hy8cqXTrpYzYL8QQoXxtCpsTY2kDzdCINnAuz9LiFNScrfeV92lvw9E+RPEbp1F0byW2e+lY6I3+qyZwnrkGfFpQ/6Ff/rawfoa45bjYL8X7cSqFiOQHNnGHEe636ajvR4EqFqxYWfVUA+XEuqaOmEcgqFqsUbaDp6XIYsr2jQZStmW4mf6PNtPaqDa/L7ES06H8qsQa25d5LQ2gDwKyNpMcmJPgo2BZRFF+E7s9/F6eP4Ih9N3VBwswG78z6uYRafOmTmsEpsYcYA2IhG2GT6FkwY/FpNatJNXauPCJNWNVx/9AtcMpMpVOs6JJGSugJwe5k+5SuNoIuViiPpUwtTi1g//Mjsu2b+6oMyQS6IAPJ4PRKxq8xRkf4u+DAO8RbSHmpkpiB+xoWYBptesegHjpxGuSpnJjMHZHGf1OdnyqO/tcvuE3dCeJ/wftrHqCnGcsOIVefcNiOrO8rTNhRsQBAcZlJriRTpqEsSTJUd5JEXsDTShkAzk00h1RUBXem3rByQgXohhPeVg3T+/RG6zF2KlUXW2gMGNbSKbsydnzUFV6XQ0pMgtupXxs9CvKEuLaamiiyaQr0EyTYetaQKEl9OJ9VG2H9uYtGs2kYFjrj1mkebH9YECJHCqsvo4x8iHE3rkPbvZ7OSa6A4pfOBp6UzXQ+IN1FFE0JJupVWXyiuLoGK91Qv3Mii1c6r9qCSeyJFI0VnDiUzrUOEBW/Zlft7kdreJPBU9loTlZiLYEnVMwnMZlJq6Q=
+  template:
+    metadata:
+      creationTimestamp: null
+      name: paperless-pg
+      namespace: paperless
+
