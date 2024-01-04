@@ -1,0 +1,15 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: infrastructure-paperless-ngx-postgresql
+  namespace: paperless
+spec:
+  encryptedData:
+    postgres-password: AgBEMUq0BEkJ/90hnDIsDCIEuzdCbFmoniJYEjfaI8gajms98eOK5G4E0ppOq+Xgehia1zqKgCcppqfcOkPhkoFMFkkif4AM0cPJpAeF52Eefw1VKtaEqmz/8Q6vpTIq4VBvF+MjFkrdiXjnsur18jpQbpmACXu2+8YsGIeUwvhWjABc+vcRfEMteUazy3IbMlWjmWljBJVH9YMfzhTLXQ2goA+7d7+pREZGGfOhYxuVv4ALKKUQRkV9ZUTpBIDeUTKR99KKfuWXOGKPcze9gBogG9MB/WI+Djm4QteKlu2EWuQO2us0L3FWLygRAcQkHEi394LBwD0EA2EV6Nvt10nYEYArxwVeUIbJIJMfVYUvGLIdvfddQqraUcOXH03MVNK8s+xcIwRW1ebASnEfPguo6wbHNDRO76ijJ3KPUypOpR53j5J7k/lgU/h+Sa/IZ4dpOZQM/U6By047mjRnOq8pllQ9xPZl6J+e5ornKFebWN4BmdGbAKAgalr2EfWSQG5g8I91HVvA4y/v8C08N/5pEjtF8i36+EPeWbAAJmvHTC/iPmHt278BIGL2pXB/Xcm2cPl8Sl4rYQGS9AAXXEkO2hjqFhT0Z5R5Z7qxm2NSSZ9uvZ8LAZFpg4x9H/DJWb3RWexWzbflfEMj+y9qkdhORapIiZSw4bn5CsnAkSel0GiibGJMW79jL8jhyymw5N/kxA5Z3AJpjADFqD2vQWgqU+LG9tG/rx3HfLAvPqNBTMe0W+kGu/aInn25+aMSrmc=
+  template:
+    metadata:
+      creationTimestamp: null
+      name: infrastructure-paperless-ngx-postgresql
+      namespace: paperless
+
