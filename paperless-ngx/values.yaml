@@ -1,22 +1,25 @@
 paperless-ngx:
   env:
     TZ: Europe/Berlin
+  
+  service:
+    type: LoadBalancer
 
-  postgresql:
-    enabled: true
-    auth:
-      database: paperless
-      existingSecret: paperless-pg
-    primary:
-      persistence:
-        enabled: true
-        size: 8Gi
-
-  redis:
-    enabled: true
-    auth:
+postgresql:
+  enabled: true
+  auth:
+    database: paperless
+    existingSecret: paperless-pg
+  primary:
+    persistence:
       enabled: true
-    master:
-      persistence:
-        enabled: true
-        size: 8Gi
+      size: 8Gi
+
+redis:
+  enabled: true
+  auth:
+    enabled: true
+  master:
+    persistence:
+      enabled: true
+      size: 8Gi
