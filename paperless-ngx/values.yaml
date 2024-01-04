@@ -3,7 +3,8 @@ paperless-ngx:
     TZ: Europe/Berlin
   
   service:
-    type: LoadBalancer
+    main:
+      type: LoadBalancer
   
   persistence:
     data:
@@ -23,21 +24,21 @@ paperless-ngx:
       accessMode: ReadWriteOnce
       size: 1Gi
 
-postgresql:
-  enabled: true
-  auth:
-    database: paperless
-    existingSecret: paperless-pg
-  primary:
-    persistence:
-      enabled: true
-      size: 8Gi
-
-redis:
-  enabled: true
-  auth:
+  postgresql:
     enabled: true
-  master:
-    persistence:
+    auth:
+      database: paperless
+      existingSecret: paperless-pg
+    primary:
+      persistence:
+        enabled: true
+        size: 8Gi
+
+  redis:
+    enabled: true
+    auth:
       enabled: true
-      size: 8Gi
+    master:
+      persistence:
+        enabled: true
+        size: 8Gi
