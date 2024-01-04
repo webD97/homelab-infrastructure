@@ -5,9 +5,9 @@ paperless-ngx:
   service:
     main:
       type: LoadBalancer
-    ports:
-      http:
-        port: 80
+      ports:
+        http:
+          port: 80
   
   persistence:
     data:
