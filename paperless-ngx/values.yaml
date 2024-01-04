@@ -1,0 +1,22 @@
+paperless-ngx:
+  env:
+    TZ: Europe/Berlin
+
+  postgresql:
+    enabled: true
+    auth:
+      database: paperless
+      existingSecret: paperless-pg
+    primary:
+      persistence:
+        enabled: true
+        size: 8Gi
+
+  redis:
+    enabled: true
+    auth:
+      enabled: true
+    master:
+      persistence:
+        enabled: true
+        size: 8Gi
