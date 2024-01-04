@@ -3,5 +3,5 @@ name: paperless-ngx
 version: 1.0.0
 dependencies:
   - name: paperless-ngx
-    repository: oci://ghcr.io/gabe565/charts/paperless-ngx
+    repository: https://charts.gabe565.com
     version: 0.10.0
