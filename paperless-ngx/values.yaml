@@ -4,6 +4,24 @@ paperless-ngx:
   
   service:
     type: LoadBalancer
+  
+  persistence:
+    data:
+      enabled: true
+      accessMode: ReadWriteOnce
+      size: 5Gi
+    media:
+      enabled: true
+      accessMode: ReadWriteOnce
+      size: 5Gi
+    export:
+      enabled: true
+      accessMode: ReadWriteOnce
+      size: 1Gi
+    consume:
+      enabled: true
+      accessMode: ReadWriteOnce
+      size: 1Gi
 
 postgresql:
   enabled: true
