@@ -1,6 +1,7 @@
 paperless-ngx:
   env:
     TZ: Europe/Berlin
+    PAPERLESS_CONSUMER_POLLING: "60"
   
   service:
     main:
