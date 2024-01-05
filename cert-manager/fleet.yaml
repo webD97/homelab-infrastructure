@@ -1,0 +1,6 @@
+defaultNamespace: kube-system
+
+helm:
+  values:
+    cert-manager:
+      installCRDs: true
