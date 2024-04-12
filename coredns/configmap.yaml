@@ -16,7 +16,7 @@ data:
             ttl 30
         }
         k8s_external k8s.home
-        forward . 192.168.39.2
+        forward . 192.168.39.3
         cache 30
         loop
         reload
